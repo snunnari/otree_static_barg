@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    End of Match
+{% endblock %}
+
+{% block content %}
+    <p>This is the outcome in this Match:</p>
+     <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ group.allocation_to_1 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_2 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_3 }}</td>
+        </tr>
+    </table>
+
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+.otree-timer {
+    display: none;
+}
+    </style>
+{% endblock %}
+
