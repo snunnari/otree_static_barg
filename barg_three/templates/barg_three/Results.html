@@ -45,10 +45,10 @@
         <p>Since the proposal did not receive the support of the veto player and at least one other member, it is rejected.</p>
         <p>Thus, we continue to another round of bargaining in the same Match.</p>
     {% elif agreement == "No" and Constants.veto == False %}
-        <p>Since the proposal did not receive the support of at least one other member, it is rejected.</p>
+        <p>Since the proposal did not receive the support of at least {{ Constants.q }} members, it is rejected.</p>
         <p>Thus, we continue to another round of bargaining in the same Match.</p>
     {% elif agreement == "Yes" and Constants.veto == False %}
-        <p>Since the proposal received the support of at least one other member, it is approved.</p>
+        <p>Since the proposal received the support of at least {{ Constants.q }} members, it is approved.</p>
         <p>The Match is over and this is is the outcome in this Match:</p>
      <table>
         <tr>

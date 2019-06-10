@@ -1,0 +1,107 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Round {{ subsession.round_number }} &ndash; Results
+{% endblock %}
+
+{% block content %}
+    <p> You are <font color="red"><b>Member {{ player.id_in_group }}</b></font>.</p>
+    <p>The proposer in this Round was Member {{ group.proposer }}.</p>
+
+    <p>These were the votes in this Round:</p>
+    <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+            <td align="center"valign="center">Member 4</td>
+            <td align="center"valign="center">Member 5</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ vote1 }}</td>
+            <td align="center"valign="center">{{ vote2 }}</td>
+            <td align="center"valign="center">{{ vote3 }}</td>
+            <td align="center"valign="center">{{ vote4 }}</td>
+            <td align="center"valign="center">{{ vote5 }}</td>
+        </tr>
+    </table>
+    <br>
+
+    <p>
+    {% if agreement == "Yes" and Constants.veto == True %}
+        <p>Since the proposal received the support of at least {{ Constants.q }} members, including the veto player, it is approved.</p>
+            <p>The Match is over and this is is the outcome in this Match:</p>
+     <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+            <td align="center"valign="center">Member 4</td>
+            <td align="center"valign="center">Member 5</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ group.allocation_to_1 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_2 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_3 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_4 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_5 }}</td>
+        </tr>
+    </table>
+
+    {% elif agreement == "No" and Constants.veto == True %}
+        <p>Since the proposal did not receive the support of at least {{ Constants.q }} members, including the veto player, it is rejected.</p>
+        <p>Thus, we continue to another round of bargaining in the same Match.</p>
+    {% elif agreement == "No" and Constants.veto == False %}
+        <p>Since the proposal did not receive the support of at least {{ Constants.q }} members, it is rejected.</p>
+        <p>Thus, we continue to another round of bargaining in the same Match.</p>
+    {% elif agreement == "Yes" and Constants.veto == False %}
+        <p>Since the proposal received the support of at least {{ Constants.q }} members, it is approved.</p>
+        <p>The Match is over and this is is the outcome in this Match:</p>
+     <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+            <td align="center"valign="center">Member 4</td>
+            <td align="center"valign="center">Member 5</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ group.allocation_to_1 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_2 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_3 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_4 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_5 }}</td>
+        </tr>
+    </table>
+    {% endif %}
+    </p>
+
+    <br>
+
+    {% next_button %}
+{% endblock %}
+
+{% block styles %}
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+.otree-timer {
+    display: none;
+}
+</style>
+{% endblock %}

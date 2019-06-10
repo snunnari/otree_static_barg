@@ -18,7 +18,7 @@ This app implements a single instance of a (potentially infinitely repeated) bar
 
 
 class Constants(BaseConstants):
-    name_in_url = 'barg'
+    name_in_url = 'barg_three'
     players_per_group = 3
     num_rounds = 50
     budget = 25 # number of tokens to divide among committee members

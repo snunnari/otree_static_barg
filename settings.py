@@ -14,10 +14,16 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'barg',
+        'name': 'barg_three',
         'display_name': "Alternating Offer Multilateral Bargaining (N=3) - Single Match",
-        'num_demo_participants': 6,
-        'app_sequence': ['barg']
+        'num_demo_participants': 3,
+        'app_sequence': ['barg_three']
+    },
+    {
+        'name': 'barg_five',
+        'display_name': "Alternating Offer Multilateral Bargaining (N=5) - Single Match",
+        'num_demo_participants': 5,
+        'app_sequence': ['barg_five']
     },
 ]
 # see the end of this file for the inactive session configs
@@ -32,12 +38,6 @@ REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = False
 
 ROOMS = [
-    {
-        'name': '30463',
-        'display_name': 'Intro to Cognitive Science',
-        # 'participant_label_file': '_rooms/30463.txt',
-        # 'use_secure_urls': True,
-    },
     {
         'name': 'econ101',
         'display_name': 'Econ 101 class',
@@ -63,8 +63,8 @@ Here are some oTree games.
 SECRET_KEY = 'v14v0!%le2n303c#d7^odz_4fd9_y%%we8wvy@s6-4e==s%ffr'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-#INSTALLED_APPS = ['otree']
-INSTALLED_APPS = ['otree', 'otree_tools']
-EXTENSION_APPS = ['otree_tools']
+INSTALLED_APPS = ['otree']
+#INSTALLED_APPS = ['otree', 'otree_tools']
+#EXTENSION_APPS = ['otree_tools']
 
 # inactive session configs
