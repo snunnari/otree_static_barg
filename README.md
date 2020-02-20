@@ -11,3 +11,4 @@ This app implements a single instance of a sequential bargaining game (i.e., a s
 and, among others, the laboratory experiments by Frechette, Guillaume, John Kagel and Steve Lehrer, 2003, "Bargaining in Legislatures: An Experimental Investigation of Open versus Closed Amendment Rules" and Kagel, John, Hankyoung Sung and Eyal Winter, 2010, "Veto Power in Committees: An Experimental Study".
 This app implements a single instance of a sequential bargaining game (i.e., a single "match").
 
+These apps were developed with oTree version 2.1.35.=[p-0[==[\=]\==]\]\\\\\\\=-]0-p[=p=======65432456789876yretyutretyutrgyrfgtyutrty6tgyu767utgygyytgy43]
