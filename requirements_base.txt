@@ -1,3 +1,2 @@
-otree==2.1.39
-otree_tools>=1.1.15
-numpy>=1.18.1
+# You should put your requirements in requirements.txt instead.
+# You can delete this file.
