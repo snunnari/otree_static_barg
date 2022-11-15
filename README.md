@@ -14,5 +14,3 @@ This app implements a single instance of a sequential bargaining game (i.e., a s
 These apps were developed with oTree version 2.1.35.
 
 Last updated on March 30, 2020.
-
-Demo: https://static-barg.herokuapp.com/demo/
